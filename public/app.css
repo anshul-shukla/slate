@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(#fff ,#fbfbfb);
+}
+.app-logo{
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #9E9E9E;
+  text-rendering: geometricPrecision;
+  margin-left: 50px;
+  margin-top: 10px;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  position: absolute;
+}

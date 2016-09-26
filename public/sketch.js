@@ -6,8 +6,15 @@
 var socket;
 
 function setup() {
-  createCanvas(400, 400);
-  background(0);
+  var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+  createCanvas(x, y);
+  //background(0);
   // Start a socket connection to the server
   // Some day we would run this server somewhere else
   socket = io.connect('http://localhost:3000');
@@ -31,7 +38,7 @@ function draw() {
 
 function mouseDragged() {
   // Draw some white circles
-  fill(255);
+  fill(0);
   noStroke();
   ellipse(mouseX,mouseY,20,20);
   // Send the mouse coordinates
@@ -42,7 +49,7 @@ function mouseDragged() {
 function sendmouse(xpos, ypos) {
   // We are sending!
   console.log("sendmouse: " + xpos + " " + ypos);
-  
+
   // Make a little object with  and y
   var data = {
     x: xpos,
